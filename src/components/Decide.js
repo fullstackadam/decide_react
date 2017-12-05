@@ -90,12 +90,14 @@ export default class DecideApp extends React.Component {
             hasOptions={this.state.options.length > 0} 
             handlePickOption={this.handlePickOption} 
           />
-          <Options 
-            options={this.state.options}
-            handleDeleteOption={this.handleDeleteOption}
-            handleDeleteOptions={this.handleDeleteOptions} 
-          />
-          <AddOption handleAddOption={this.handleAddOption} />
+          <div className="widget">
+            <Options 
+              options={this.state.options}
+              handleDeleteOption={this.handleDeleteOption}
+              handleDeleteOptions={this.handleDeleteOptions} 
+            />
+            <AddOption handleAddOption={this.handleAddOption} />
+          </div>
         </div>
         <OptionModal
           selectedOption={this.state.selectedOption}
