@@ -13,19 +13,18 @@ const Options = (props) => (
       </button>
     </div>
     {props.options.length === 0 && <p className="widget__message">Please add an option to get started!</p>}
-    <ol>
-      {
-        props.options.map(
-          (option, index) => (
-            <Option 
-              option={option} 
-              key={index.toString() + option.split(' ')[0]} 
-              handleDeleteOption={props.handleDeleteOption}
-            />
-          )
+    {
+      props.options.map(
+        (option, index) => (
+          <Option 
+            index={index}
+            option={option} 
+            key={index.toString() + option.split(' ')[0]} 
+            handleDeleteOption={props.handleDeleteOption}
+          />
         )
-      }
-    </ol>
+      )
+    }
   </div>
 );
 
